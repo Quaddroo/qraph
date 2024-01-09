@@ -1,0 +1,6 @@
+IDLE = "idle"
+DRAWING_TRENDLINE = "drawing"
+DRAWING_SYSTEM = "drawing system"
+DRAWING_BOX = "drawing box"
+DRAWING_RR_1 = "drawing rr 1"
+DRAWING_RR_2 = "drawing rr 2"
