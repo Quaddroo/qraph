@@ -4,11 +4,11 @@
 
 Qraph is a tool for candlestick charting, with a few useful properties that
 other tools like Tradingview seem to lack:
-    + SPEED.
-    + Dynamic timeframe change.
-    + Changing timeframe maintains current chart position.
-    + Drawing tools stay at their timeframes and lower, and don't overshadow
-       higher timeframes (unless explicitly forced to).
+
+    + SPEED
+    + Dynamic timeframe change
+    + Changing timeframe maintains current chart position
+    + Drawing tools stay at their timeframes and lower, and don't overshadow higher timeframes (unless explicitly forced to)
 
 It is built on pyqtgraph, and so anything that can be done with pyqtgraph can be
 done with it.
