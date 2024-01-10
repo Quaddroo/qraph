@@ -538,7 +538,7 @@ class Qraph(QtWidgets.QMainWindow):
 		if isinstance(pa, CandlesticksItem):
 			majority_chart = pa
 		else:
-			assert isinstance(pa, BinancePriceAction)
+			assert isinstance(pa, OHLCPriceAction)
 			copied_pa = pa.copy()#BinancePriceAction(pa.data_source, pa.resolution, pa.label) # necessary for live and non-live to work simultaneously #.iloc[-2:])
 			copied_pa.label = pa.label
 			copied_pa.resolution = pa.resolution
