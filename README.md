@@ -20,7 +20,19 @@ Qraph is in alpha, so expect many issues.
 ```
 git clone https://github.com/Quaddroo/qraph.git
 pip install -r requirements.txt
+```
+
+Easy example:
+```
 python3 example.py
+```
+
+Usage example:
+```
+pa = OHLCPriceAction(df) # df has columns 'open', 'high', 'low', 'close', 'time' (index)
+q = Qraph()
+q.add_candlestick_chart(pa)
+q.show()
 ```
 
 ## Design principle
@@ -62,3 +74,4 @@ escape - exit selection
     + Log mode code is dirty, should fix pygtgraph code instead.
     + Pyqtgraph auto-culling does not work, so there is sub-optimal manual code
       written for it.
+    + The way to close pyqtgraph windows is weird, feels more like a crash.
