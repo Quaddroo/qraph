@@ -518,7 +518,9 @@ class Qraph(QtWidgets.QMainWindow):
 	def create_plot_area(self):
 		plot = self.vertical_plot_container.addPlot()
 		plot.setSizePolicy(self.plot_size_policy)
-		plot.setAxisItems({'bottom': pg.DateAxisItem()}) # makes unix secs look like proper times
+        da = pg.DateAxisItem()
+        da.utcOffset = 0 # fixed in newer pyqtgraph version?
+        plot.setAxisItems({'bottom': da}) # makes unix secs look like proper times
 		plot.setLogMode(False, True)
 		plot.scene().sigMouseClicked.connect(lambda event: self.react_to_mouse_click(event, plot))
 		plot.sigXRangeChanged.connect(lambda viewbox, interval: self.react_to_viewbox_change(viewbox, interval, plot))
