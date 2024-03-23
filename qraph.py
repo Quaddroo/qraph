@@ -305,8 +305,8 @@ class Qraph(QtWidgets.QMainWindow):
 		# Lower bar with buttons
 		self.ui.left_button.setDisabled(True)
 		self.ui.right_button.setDisabled(True)
-# 		self.ui.left_button.clicked.connect(self.handle_left_button_click)
-# 		self.ui.right_button.clicked.connect(self.handle_right_button_click)
+#		self.ui.left_button.clicked.connect(self.handle_left_button_click)
+#		self.ui.right_button.clicked.connect(self.handle_right_button_click)
 		# TODO: fix zoom() so ^^ works
 		self.ui.go_to_date.setDisabled(True)
 
@@ -412,7 +412,7 @@ class Qraph(QtWidgets.QMainWindow):
 		plot_area = self.create_plot_area()
 		for chart in charts:
 			plot_area.addItem(chart)
-# 		self.add_plots(charts, plot_area)
+#		self.add_plots(charts, plot_area)
 		self.last_save_url = url
 		self.reset_available_freqs()
 		if 'viewbox_range' in save_object.keys():
@@ -518,9 +518,9 @@ class Qraph(QtWidgets.QMainWindow):
 	def create_plot_area(self):
 		plot = self.vertical_plot_container.addPlot()
 		plot.setSizePolicy(self.plot_size_policy)
-        da = pg.DateAxisItem()
-        da.utcOffset = 0 # fixed in newer pyqtgraph version?
-        plot.setAxisItems({'bottom': da}) # makes unix secs look like proper times
+		da = pg.DateAxisItem()
+		da.utcOffset = 0 # fixed in newer pyqtgraph version?
+		plot.setAxisItems({'bottom': da}) # makes unix secs look like proper times
 		plot.setLogMode(False, True)
 		plot.scene().sigMouseClicked.connect(lambda event: self.react_to_mouse_click(event, plot))
 		plot.sigXRangeChanged.connect(lambda viewbox, interval: self.react_to_viewbox_change(viewbox, interval, plot))
